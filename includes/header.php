@@ -91,9 +91,23 @@ if(isset($_GET['pro_id'])){
                    <li>
                        <a href="customer_register.php">Register</a>
                    </li>
-                   <li>
-                       <a href="checkout.php">My Account</a>
-                   </li>
+                   <li class="<?php if($active=='Account') echo"active"; ?>">
+                           
+                           <?php 
+                           
+                           if(!isset($_SESSION['customer_email'])){
+                               
+                               echo"<a href='checkout.php'>My Account</a>";
+                               
+                           }else{
+                               
+                              echo"<a href='customer/my_account.php?my_orders'>My Account</a>"; 
+                               
+                           }
+                           
+                           ?>
+                           
+                       </li>
                    <li>
                        <a href="cart.php">Go To Cart</a>
                    </li>
@@ -138,6 +152,13 @@ if(isset($_GET['pro_id'])){
                    
                </a><!-- navbar-brand home Finish -->
                
+               <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                   
+                   <span class="sr-only">Toggle Search</span>
+                   
+                   <i class="fa fa-search"></i>
+                   
+               </button>
                <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                    
                    <span class="sr-only">Toggle Navigation</span>
@@ -146,13 +167,6 @@ if(isset($_GET['pro_id'])){
                    
                </button>
                
-               <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                   
-                   <span class="sr-only">Toggle Search</span>
-                   
-                   <i class="fa fa-search"></i>
-                   
-               </button>
                
            </div><!-- navbar-header Finish -->
            
@@ -216,31 +230,31 @@ if(isset($_GET['pro_id'])){
                    
                </div><!-- navbar-collapse collapse right Finish -->
                
-               <div class="collapse clearfix" id="search"><!-- collapse clearfix Begin -->
-                   
-                   <form method="get" action="results.php" class="navbar-form"><!-- navbar-form Begin -->
-                       
-                       <div class="input-group"><!-- input-group Begin -->
-                           
-                           <input type="text" class="form-control" placeholder="Search" name="user_query" required>
-                           
-                           <span class="input-group-btn"><!-- input-group-btn Begin -->
-                           
-                           <button type="submit" name="search" value="Search" class="btn btn-primary"><!-- btn btn-primary Begin -->
-                               
-                               <i class="fa fa-search"></i>
-                               
-                           </button><!-- btn btn-primary Finish -->
-                           
-                           </span><!-- input-group-btn Finish -->
-                           
-                       </div><!-- input-group Finish -->
-                       
-                   </form><!-- navbar-form Finish -->
-                   
-               </div><!-- collapse clearfix Finish -->
                
-           </div><!-- navbar-collapse collapse Finish -->
+            </div><!-- navbar-collapse collapse Finish -->
+            <div class="collapse clearfix" id="search"><!-- collapse clearfix Begin -->
+                
+                <form method="get" action="results.php" class="navbar-form"><!-- navbar-form Begin -->
+                    
+                    <div class="input-group"><!-- input-group Begin -->
+                        
+                        <input type="text" class="form-control" placeholder="Search" name="user_query" required>
+                        
+                        <span class="input-group-btn"><!-- input-group-btn Begin -->
+                        
+                        <button type="submit" name="search" value="Search" class="btn btn-primary"><!-- btn btn-primary Begin -->
+                            
+                            <i class="fa fa-search"></i>
+                            
+                        </button><!-- btn btn-primary Finish -->
+                        
+                        </span><!-- input-group-btn Finish -->
+                        
+                    </div><!-- input-group Finish -->
+                    
+                </form><!-- navbar-form Finish -->
+                
+            </div><!-- collapse clearfix Finish -->
            
        </div><!-- container Finish -->
        
