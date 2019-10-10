@@ -39,7 +39,7 @@ if(!isset($_SESSION['customer_email'])){
             <div class="container"><!-- container BEGIN-->
 
                 <div class="col-md-6 offer"><!-- col-md-6 offer BEGIN-->
-                <a href="#" class="btn btn-success btn-sm">
+                <a href="#" class="btn btn-sm">
                    
                    <?php 
                    
@@ -126,7 +126,7 @@ if(!isset($_SESSION['customer_email'])){
                                 <a href="my_account.php">My Account</a>
                             </li>
                             <li>
-                                <a href="../cart.php">Cart</a>
+                                <a href="../cart.php">Shopping Cart</a>
                             </li>
                             <li>
                                 <a href="../contact.php">Contact Us</a>

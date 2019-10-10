@@ -5,10 +5,10 @@ session_start();
 
 
 if(!isset($_SESSION['customer_email'])){
-    echo " <script> window.open( '..checkout.php' , '_self' ) </script> ";
+    echo " <script> window.open( '../checkout.php' , '_self' ) </script> ";
 }else {    include("includes/db.php");
     include("functions/functions.php");
-if(isset($_GET['order_id'])){
+}if(isset($_GET['order_id'])){
     $order_id = $_GET['order_id'];
 
 }
@@ -243,36 +243,38 @@ if(isset($_GET['order_id'])){
                             </div>
                         </form>
                         <?php 
-                        if(isset($_POST['confirm_payment']))
-                        $update_id = $_GET['update_id'];
+                        if(isset($_POST['confirm_payment'])){
+                            $update_id = $_GET['update_id'];
                         
-                        $invoice_no =$_POST['invoice_no'];
-
-                        $amount =$_POST['amount'];
-
-                        $payment_method =$_POST['payment_method'];
-
-                        $ref_no =$_POST['ref_no'];
-                        echo $update_id,$invoice_no,$amount,$payment_method,$ref_no;
-                        $insert_payment="INSERT INTO payments ( `invoice_no`, `amount`, `payment_method`, `ref_no`) VALUES ('$invoice_no','$amount','$payment_method','$ref_no')";
-
-                        $run_insert=mysqli_query($con,$insert_payment);
-
-                        $update_customer_status="UPDATE `customer_orders` SET `order_status`='Complete' WHERE `order_id` = $update_id";
-                        
-                        $run_update=mysqli_query($con,$update_customer_status);
-
-                        $update_pending_orders="UPDATE `pending_orders` SET `order_status`='Complete' WHERE `order_id` = $update_id";
-                        
-                        $run_update_pending=mysqli_query($con,$update_pending_orders);
-
-                        if($run_update_pending){
-                            echo "<script>alert( 'Thank you for purchasing, your order will be ready within 24 hours!' )</script>";
-                            echo "<script> window.open( 'my_account.php?my_orders','_self' )</script>";
-
+                            $invoice_no =$_POST['invoice_no'];
+    
+                            $amount =$_POST['amount'];
+    
+                            $payment_method =$_POST['payment_method'];
+    
+                            $ref_no =$_POST['ref_no'];
+                    
+                            $insert_payment="INSERT INTO payments ( `invoice_no`, `amount`, `payment_method`, `ref_no`) VALUES ('$invoice_no','$amount','$payment_method','$ref_no')";
+    
+                            $run_insert=mysqli_query($con,$insert_payment);
+    
+                            $update_customer_status="UPDATE `customer_orders` SET `order_status`='Complete' WHERE `order_id` = $update_id";
+                            
+                            $run_update=mysqli_query($con,$update_customer_status);
+    
+                            $update_pending_orders="UPDATE `pending_orders` SET `order_status`='Complete' WHERE `order_id` = $update_id";
+                            
+                            $run_update_pending=mysqli_query($con,$update_pending_orders);
+    
+                            if($run_update_pending){
+                                echo "<script>alert( 'Thank you for purchasing, your order will be ready within 24 hours!' )</script>";
+                                echo "<script> window.open( 'my_account.php?my_orders','_self' )</script>";
+    
+                            }
+    
+    
                         }
-
-
+                       
                         ?>
                     </div>
                 </div>
@@ -289,5 +291,3 @@ if(isset($_GET['order_id'])){
 
  </body>
 </html>
-
-                    <?php } ?>

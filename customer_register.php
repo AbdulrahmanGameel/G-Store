@@ -7,30 +7,13 @@
    
    <div id="content"><!-- #content Begin -->
        <div class="container"><!-- container Begin -->
-           <div class="col-md-12"><!-- col-md-12 Begin -->
-               
-               <ul class="breadcrumb"><!-- breadcrumb Begin -->
-                   <li>
-                       <a href="home.php">Home</a>
-                   </li>
-                   <li>
-                       Register
-                   </li>
-               </ul><!-- breadcrumb Finish -->
-               
-           </div><!-- col-md-12 Finish -->
+       
            
-           <div class="col-md-3"><!-- col-md-3 Begin -->
-   
-   <?php 
-    
-    include("includes/sidebar.php");
-    
-    ?>
-               
-           </div><!-- col-md-3 Finish -->
+        <div class="col-md-3"><!-- col-md-3 Begin -->
+
+        </div><!-- col-md-3 Finish -->
            
-           <div class="col-md-9"><!-- col-md-9 Begin -->
+           <div class="col-md-6"><!-- col-md-9 Begin -->
                
                <div class="box"><!-- box Begin -->
                    

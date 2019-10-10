@@ -63,7 +63,7 @@ if(isset($_GET['pro_id'])){
            
            <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
-               <a href="#" class="btn btn-success btn-sm">
+               <a href="#" class="btn btn-sm">
                    
                    <?php 
                    
@@ -80,7 +80,7 @@ if(isset($_GET['pro_id'])){
                    ?>
                    
                </a>
-               <a href="checkout.php"> <?php itemCount();?> items in your cart | Making a total of <?php itemTotalValue();?></a>
+               <a href="cart.php"> <?php itemCount();?> items in your cart | Making a total of <?php itemTotalValue();?></a>
                
            </div><!-- col-md-6 offer Finish -->
            
@@ -92,7 +92,7 @@ if(isset($_GET['pro_id'])){
                        <a href="customer_register.php">Register</a>
                    </li>
                    <li>
-                       <a href="customer/my_account.php">My Account</a>
+                       <a href="checkout.php">My Account</a>
                    </li>
                    <li>
                        <a href="cart.php">Go To Cart</a>

@@ -31,7 +31,7 @@ include("functions/functions.php");
             <div class="container"><!-- container BEGIN-->
 
                 <div class="col-md-6 offer"><!-- col-md-6 offer BEGIN-->
-                <a href="#" class="btn btn-success btn-sm">
+                <a href="#" class="btn btn-sm">
                    
                    <?php 
                    

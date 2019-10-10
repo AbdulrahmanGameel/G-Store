@@ -63,7 +63,7 @@ if(isset($_GET['pro_id'])){
            
            <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
-               <a href="#" class="btn btn-success btn-sm">
+               <a href="#" class="btn btn-sm">
                    
                    <?php 
                    

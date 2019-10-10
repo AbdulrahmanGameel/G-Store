@@ -15,7 +15,7 @@
     
      <p class="lead text-center"><!-- lead text-center Begin -->
          
-         <a class="" href="order.php?customer_id=<?php echo $customer_id ?>">  Offline Payment </a>
+         <a class="btn btn-primary" href="order.php?customer_id=<?php echo $customer_id ?>">  Offline Payment </a>
          
      </p><!-- lead text-center Finish -->
      
@@ -23,7 +23,7 @@
          
         <p class="lead"><!-- lead Begin -->
             
-            <a href="#">
+            <a href="#" class="btn" disabled title="not implemented">
                 
                 Paypal Payment
                 
